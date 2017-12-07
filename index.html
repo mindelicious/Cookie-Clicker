@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Coockie Clicker</title>
+</head>
+<body>
+    <div class="container">
+        <h3>Welcome to SkyGate Bakery</h3>
+        <a id="cookie" href="#"><img class="cookieImg" src="./img/cookie.png"></a>
+        <div class="production">
+            <div class="production-elm">
+                <p>Buy 1 Cursor</p>
+                <button>
+                    <a id="buyClick"><img class="cursor" src="./img/cursor.png"></a>
+                </button>
+                <p id="costClick">For 15 Cookies</p>
+                <p id="amountClick">Amount: 0</p>
+            </div>
+            <div>
+                <p>Buy 1 Grandma</p>
+                <button>
+                    <a id="buyGrandma"><img class="grandma" src="./img/grrandma.png"></a>
+                </button>
+                <p id="costGrandma">For 100 Cookies</p>
+                <p id="amountGrandma">Amount: 0</p>
+            </div>
+            <div>
+                <p>Buy 1 Farm</p>
+                <button>
+                    <a id="buyFarm"><img class="farm" src="./img/farm.png"></a>
+                </button>
+                <p id="costFarm">For 100 Cookies</p>
+                <p id="amountFarm">Amount: 0</p>
+            </div>
+            <div>
+                <button><a id="saveScore">Save</a></button>
+                <button><a id="loadScore">Load</a></button>
+            </div>
+        </div>
+        <div class="counter">
+            <p>You got: <span id="cook-qt">0</span> Cookies!</p>
+            <p>Per second: <span id="per-sec">0</span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
