@@ -1,17 +1,18 @@
 
 .container {
     display: flex;
-    flex-wrap: wrap;
 }
-h3 {
+header {
     width: 100%;
     text-align: center;
 }
 .production {
     display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
 }
-.counter {
-    width: 100%;
+.cookie-section {
+    text-align: center;
 }
 .cooking {
    width: 200px
@@ -21,4 +22,19 @@ h3 {
 }
 .grandmaImg {
     height: 50px;
+}
+.production img {
+    
+    width: 100px;
+    height: 60px;
+}
+.production-elm {
+    border: 1px solid;
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    align-items: center;
+}
+.production-elm a {
+    cursor: pointer;
 }
