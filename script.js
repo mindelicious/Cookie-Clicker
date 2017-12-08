@@ -1,7 +1,6 @@
 
 var cookieElm = document.getElementById('cookie');
 var cookieCount = 0;
-var score = document.getElementById('cook-qt');
 var cookiePerSec = document.getElementById('per-sec');
 var multiplier = 0.1;
 
@@ -42,29 +41,28 @@ loadScoreElm.onclick = function() {
 
 //Update
 function update() {
-    score.innerHTML = cookieCount;
+    document.getElementById('cook-qt').innerHTML = cookieCount;
 
-    document.getElementById('amountClick').innerHTML = 'Amount: ' + autoClick;
-    document.getElementById('costClick').innerHTML = 'For ' + ((autoClick+1) * 3) + ' Cookies';
+    document.getElementById('amountCursor').innerHTML = 'Amount: ' + autoClick;
+    document.getElementById('costCursor').innerHTML = 'For ' + ((autoClick+1) * 15) + ' Cookies';
+    document.getElementById('perSecCursor').innerHTML = 'Per second: ' + ((autoClick) * multiplier);
   
     document.getElementById('amountGrandma').innerHTML = 'Amount: ' + grandma;
-    document.getElementById('costGrandma').innerHTML = 'For ' + ((grandma+1) * 15) + ' Cookies';
-    cookiePerSec.innerHTML = (((autoClick)+(grandma * 2)+(farm * 3)+(bakery * 4)+(mine * 6)) * multiplier).toFixed(2);
+    document.getElementById('costGrandma').innerHTML = 'For ' + ((grandma+1) * 100) + ' Cookies';
     
     document.getElementById('amountFarm').innerHTML = 'Amount: ' + farm;
-    document.getElementById('costFarm').innerHTML = 'For ' + ((farm+1) * 30) + ' Cookies';
+    document.getElementById('costFarm').innerHTML = 'For ' + ((farm+1) * 1100) + ' Cookies';
 
     document.getElementById('amountBakery').innerHTML = 'Amount: ' + bakery;
-    document.getElementById('costBakery').innerHTML = 'For ' + ((bakery+1) * 50) + ' Cookies';
+    document.getElementById('costBakery').innerHTML = 'For ' + ((bakery+1) * 12000) + ' Cookies';
 
     document.getElementById('amountMine').innerHTML = 'Amount: ' + mine;
-    document.getElementById('costMine').innerHTML = 'For ' + ((mine+1) * 80) + ' Cookies';
+    document.getElementById('costMine').innerHTML = 'For ' + ((mine+1) * 130000) + ' Cookies';
+
+    cookiePerSec.innerHTML = (((autoClick)+(grandma * 2)+(farm * 3)+(bakery * 5)+(mine * 7)) * multiplier).toFixed(2);
 }
 
-// Add timer/ buy autoClick
-var buyClick = document.getElementById('buyClick');
-var autoClick = 0;
-
+// Add timer
 function timer() {
     cookieCount = cookieCount + autoClick;
     cookieCount = cookieCount + grandma*2;
@@ -75,9 +73,12 @@ function timer() {
 }
 setInterval(timer, 2000)
 
-buyClick.onclick = function buyClick() {
-    if(cookieCount >= (autoClick+1) * 3) {
-        cookieCount = cookieCount - ((autoClick+1) * 3);
+//Buy cursor
+var buyCursor = document.getElementById('buyCursor');
+var autoClick = 0;
+buyCursor.onclick = function() {
+    if(cookieCount >= ((autoClick+1) * 15)) {
+        cookieCount = cookieCount - ((autoClick+1) * 15);
         autoClick = autoClick + 1;
         update()
     } 
@@ -87,8 +88,8 @@ buyClick.onclick = function buyClick() {
 var buyGrandmaElm = document.getElementById('buyGrandma');
 var grandma = 0;
 buyGrandmaElm.onclick = function() {
-    if(cookieCount >= (grandma+1) * 15) {
-        cookieCount = cookieCount - ((grandma+1) * 15);
+    if(cookieCount >= ((grandma+1) * 100)) {
+        cookieCount = cookieCount - ((grandma+1) * 100);
         grandma = grandma + 1;
         update();
     }
@@ -98,8 +99,8 @@ buyGrandmaElm.onclick = function() {
 var buyFarmElm = document.getElementById('buyFarm');
 var farm = 0;
 buyFarmElm.onclick = function() {
-    if(cookieCount >= (farm+1) * 30) {
-        cookieCount = cookieCount - ((farm+1) * 30);
+    if(cookieCount >= ((farm+1) * 1100)) {
+        cookieCount = cookieCount - ((farm+1) * 1100);
         farm = farm + 1;
         update();
     }
@@ -108,8 +109,8 @@ buyFarmElm.onclick = function() {
 var buyBakeryElm = document.getElementById('buyBakery');
 var bakery = 0;
 buyBakeryElm.onclick = function() {
-    if(cookieCount >= (bakery+1) * 50) {
-        cookieCount = cookieCount - ((bakery+1) * 50);
+    if(cookieCount >= ((bakery+1) * 12000)) {
+        cookieCount = cookieCount - ((bakery+1) * 12000);
         bakery = bakery + 1;
         update();
     }
@@ -119,8 +120,8 @@ buyBakeryElm.onclick = function() {
 var buyMineElm = document.getElementById('buyMine');
 var mine = 0;
 buyMineElm.onclick = function() {
-    if(cookieCount >= (mine+1) * 80) {
-        cookieCount = cookieCount - ((mine+1) * 80);
+    if(cookieCount >= ((mine+1) * 130000)) {
+        cookieCount = cookieCount - ((mine+1) * 130000);
         mine = mine + 1;
         update();
     }

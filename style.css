@@ -8,7 +8,7 @@ body {
 }
 .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 header {
     width: 100%;
@@ -41,8 +41,7 @@ header {
     border: 1px solid;
     border-radius: 10px;
     display: flex;
-    width: 100%;
-    max-width: 400px;
+    width: 400px;
     align-items: center;
     justify-content: space-around;
     margin-bottom: 10px;
