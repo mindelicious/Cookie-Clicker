@@ -49,15 +49,19 @@ function update() {
   
     document.getElementById('amountGrandma').innerHTML = 'Amount: ' + grandma;
     document.getElementById('costGrandma').innerHTML = 'For ' + ((grandma+1) * 100) + ' Cookies';
-    
+    document.getElementById('perSecGrandma').innerHTML = 'Per second: ' + ((grandma * 2) * multiplier);
+
     document.getElementById('amountFarm').innerHTML = 'Amount: ' + farm;
     document.getElementById('costFarm').innerHTML = 'For ' + ((farm+1) * 1100) + ' Cookies';
+    document.getElementById('perSecFarm').innerHTML = 'Per second: ' + ((farm *3 ) * multiplier);
 
     document.getElementById('amountBakery').innerHTML = 'Amount: ' + bakery;
     document.getElementById('costBakery').innerHTML = 'For ' + ((bakery+1) * 12000) + ' Cookies';
+    document.getElementById('perSecBakery').innerHTML = 'Per second: ' + ((bakery) * multiplier);
 
     document.getElementById('amountMine').innerHTML = 'Amount: ' + mine;
     document.getElementById('costMine').innerHTML = 'For ' + ((mine+1) * 130000) + ' Cookies';
+    document.getElementById('perSecMine').innerHTML = 'Per second: ' + ((mine) * multiplier);
 
     cookiePerSec.innerHTML = (((autoClick)+(grandma * 2)+(farm * 3)+(bakery * 5)+(mine * 7)) * multiplier).toFixed(2);
 }
