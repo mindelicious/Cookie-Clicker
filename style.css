@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
 
+body {
+    font-family: 'Dosis', sans-serif;
+    height: 1024px;
+    background-image: linear-gradient(to bottom, #967948, #344752);
+    color: wheat;
+}
 .container {
     display: flex;
+    justify-content: space-around;
 }
 header {
     width: 100%;
@@ -8,11 +16,12 @@ header {
 }
 .production {
     display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 .cookie-section {
     text-align: center;
+    margin: 15px;
+    cursor: pointer;
 }
 .cooking {
    width: 200px
@@ -24,17 +33,59 @@ header {
     height: 50px;
 }
 .production img {
-    
     width: 100px;
     height: 60px;
 }
 .production-elm {
+    background-image: linear-gradient(to bottom, #78778f, #6e6e58);
     border: 1px solid;
+    border-radius: 10px;
     display: flex;
     width: 100%;
     max-width: 400px;
     align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.production-elm button {
+    background-image: linear-gradient(to right, #967948, #344752);
+}
+.production-elm button:hover {
+    background-image: linear-gradient(to left, #967948, #344752);
 }
 .production-elm a {
     cursor: pointer;
+}
+.saveLoadBtn button {
+    background-image: linear-gradient(to bottom, #344752, #967948);
+    border-radius: 5px;
+    color: blanchedalmond;
+    font-size: 15px;
+    padding: 5px 10px;
+    margin-right: 10px;
+}
+.saveLoadBtn button:hover {
+    background-image: linear-gradient(to bottom, #967948, #344752);
+}
+
+/* cookie shake */
+.cookieImg:ACTIVE{
+	-webkit-animation-name: shakeit;
+	-webkit-animation-duration: 200ms;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: 2;
+	-webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes shakeit {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
 }
