@@ -3,6 +3,8 @@ var cookieElm = document.getElementById('cookie');
 var cookieCount = 0;
 var cookiePerSec = document.getElementById('per-sec');
 var multiplier = 0.1;
+var updatePrice = 0.15;
+var amount = 0;
 
 // Add cookie
 cookieElm.onclick = function() {
@@ -41,19 +43,20 @@ loadScoreElm.onclick = function() {
 
 //Update
 function update() {
-    document.getElementById('cook-qt').innerHTML = cookieCount;
+    document.getElementById('cook-qt').innerHTML = cookieCount.toFixed(0);
+    document.title = cookieCount + ' Cookies';
 
-    document.getElementById('amountCursor').innerHTML = 'Amount: ' + autoClick;
-    document.getElementById('costCursor').innerHTML = 'For ' + ((autoClick+1) * 15) + ' Cookies';
-    document.getElementById('perSecCursor').innerHTML = 'Per second: ' + ((autoClick) * multiplier);
+    document.getElementById('amountCursor').innerHTML = 'Amount: ' + amount;
+    document.getElementById('costCursor').innerHTML = 'For ' + ((autoClick+1) * 15)  + ' Cookies';
+    document.getElementById('perSecCursor').innerHTML = 'Per second: ' + ((autoClick) * multiplier).toFixed(1);
   
     document.getElementById('amountGrandma').innerHTML = 'Amount: ' + grandma;
     document.getElementById('costGrandma').innerHTML = 'For ' + ((grandma+1) * 100) + ' Cookies';
-    document.getElementById('perSecGrandma').innerHTML = 'Per second: ' + ((grandma * 2) * multiplier);
+    document.getElementById('perSecGrandma').innerHTML = 'Per second: ' + ((grandma * 10) * multiplier);
 
     document.getElementById('amountFarm').innerHTML = 'Amount: ' + farm;
     document.getElementById('costFarm').innerHTML = 'For ' + ((farm+1) * 1100) + ' Cookies';
-    document.getElementById('perSecFarm').innerHTML = 'Per second: ' + ((farm *3 ) * multiplier);
+    document.getElementById('perSecFarm').innerHTML = 'Per second: ' + ((farm * 8) * multiplier);
 
     document.getElementById('amountBakery').innerHTML = 'Amount: ' + bakery;
     document.getElementById('costBakery').innerHTML = 'For ' + ((bakery+1) * 12000) + ' Cookies';
@@ -63,19 +66,19 @@ function update() {
     document.getElementById('costMine').innerHTML = 'For ' + ((mine+1) * 130000) + ' Cookies';
     document.getElementById('perSecMine').innerHTML = 'Per second: ' + ((mine) * multiplier);
 
-    cookiePerSec.innerHTML = (((autoClick)+(grandma * 2)+(farm * 3)+(bakery * 5)+(mine * 7)) * multiplier).toFixed(2);
+    cookiePerSec.innerHTML = (((autoClick)+(grandma * 10)+(farm * 3)+(bakery * 5)+(mine * 7)) * multiplier);
 }
 
 // Add timer
 function timer() {
-    cookieCount = cookieCount + autoClick;
-    cookieCount = cookieCount + grandma*2;
-    cookieCount = cookieCount + farm*3;
-    cookieCount = cookieCount + bakery*5;
-    cookieCount = cookieCount + mine*7;
+    cookieCount = cookieCount + autoClick * 0.1;
+    cookieCount = cookieCount + grandma * 1;
+    cookieCount = cookieCount + farm * 8;
+    cookieCount = cookieCount + bakery * 47;
+    cookieCount = cookieCount + mine * 7;
     update()
 }
-setInterval(timer, 2000)
+setInterval(timer, 1000)
 
 //Buy cursor
 var buyCursor = document.getElementById('buyCursor');
@@ -83,7 +86,9 @@ var autoClick = 0;
 buyCursor.onclick = function() {
     if(cookieCount >= ((autoClick+1) * 15)) {
         cookieCount = cookieCount - ((autoClick+1) * 15);
-        autoClick = autoClick + 1;
+        autoClick = autoClick + 1 * updatePrice;
+      //  updatePrice = updatePrice * autoClick + 1;
+        amount = amount + 1;
         update()
     } 
 }
