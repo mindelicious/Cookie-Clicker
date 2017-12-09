@@ -4,7 +4,6 @@ var cookieCount = 0;
 var cookiePerSec = document.getElementById('per-sec');
 var multiplier = 0.1;
 var updatePrice = 0.15;
-var amount = 0;
 
 // Add cookie
 cookieElm.onclick = function() {
@@ -46,9 +45,9 @@ function update() {
     document.getElementById('cook-qt').innerHTML = cookieCount.toFixed(0);
     document.title = cookieCount + ' Cookies';
 
-    document.getElementById('amountCursor').innerHTML = 'Amount: ' + amount;
-    document.getElementById('costCursor').innerHTML = 'For ' + ((autoClick+1) * 15)  + ' Cookies';
-    document.getElementById('perSecCursor').innerHTML = 'Per second: ' + ((autoClick) * multiplier).toFixed(1);
+    document.getElementById('amountCursor').innerHTML = 'Amount: ' + autoClick;
+    document.getElementById('costCursor').innerHTML = 'For ' + ((autoClick+1)*15) + ' Cookies';
+    document.getElementById('perSecCursor').innerHTML = 'Per second: ' + (((autoclick) * 15)* multiplier);
   
     document.getElementById('amountGrandma').innerHTML = 'Amount: ' + grandma;
     document.getElementById('costGrandma').innerHTML = 'For ' + ((grandma+1) * 100) + ' Cookies';
@@ -66,7 +65,7 @@ function update() {
     document.getElementById('costMine').innerHTML = 'For ' + ((mine+1) * 130000) + ' Cookies';
     document.getElementById('perSecMine').innerHTML = 'Per second: ' + ((mine) * multiplier);
 
-    cookiePerSec.innerHTML = (((autoClick)+(grandma * 10)+(farm * 3)+(bakery * 5)+(mine * 7)) * multiplier);
+    cookiePerSec.innerHTML = (((autoClick)+(grandma * 1)+(farm * 3)+(bakery * 5)+(mine * 7))* multiplier);
 }
 
 // Add timer
@@ -86,9 +85,7 @@ var autoClick = 0;
 buyCursor.onclick = function() {
     if(cookieCount >= ((autoClick+1) * 15)) {
         cookieCount = cookieCount - ((autoClick+1) * 15);
-        autoClick = autoClick + 1 * updatePrice;
-      //  updatePrice = updatePrice * autoClick + 1;
-        amount = amount + 1;
+        autoClick = autoClick + 1;
         update()
     } 
 }
