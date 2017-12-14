@@ -4,60 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Coockie Clicker</title>
+    <title>0 Cookies</title>
 </head>
 <body>
-    <header><h1>Welcome to SkyGate Bakery</h1></header>
+    <header><h1>Welcome to { SkyGate Bakery</h1></header>
     <div class="container">
         <div class="cookie-section">
             <a id="cookie"><img class="cookieImg" src="./img/cookie.png"></a>
-            <p>You got: <span id="cook-qt">0</span> Cookies!</p>
-            <p>Per second: <span id="per-sec">0.00</span></p>
+            <h2>You got: <span id="cook-qt">0</span> Cookies!</h2>
+            <h3>Per second: <span id="per-sec">0.0</span></h3>
+            <div class="saveLoadBtn">
+                <button><a id="saveScore">Save</a></button>
+                <button><a id="loadScore">Load</a></button>
+            </div>
         </div>
         <div class="production">
             <div class="production-elm">
-                <p>Buy 1 Cursor</p>
+                <div>
+                    <p>Buy 1 Cursor</p>
+                    <p id="costCursor">For 15 Cookies</p>
+                </div>
                 <button>
-                    <a id="buyClick" href="#"><img class="cursor" src="./img/cursor.png"></a>
+                    <a id="buyCursor"><img class="cursor" src="./img/cursor.png"></a>
                 </button>
-                <p id="costClick">For 15 Cookies</p>
-                <p id="amountClick">Amount: 0</p>
+                <div>
+                    <p id="amountCursor">Amount: 0</p>
+                    <p id="perSecCursor">Per second: 0</p>
+                </div>
             </div>
             <div class="production-elm">
-                <p>Buy 1 Grandma</p>
+                <div>
+                    <p>Buy 1 Grandma</p>
+                    <p id="costGrandma">For 100 Cookies</p>
+                </div>
                 <button>
                     <a id="buyGrandma"><img class="grandma" src="./img/grrandma.png"></a>
                 </button>
-                <p id="costGrandma">For 100 Cookies</p>
-                <p id="amountGrandma">Amount: 0</p>
+                <div>
+                    <p id="amountGrandma">Amount: 0</p>
+                    <p id="perSecGrandma">Per second: 0</p>
+                </div>
             </div>
             <div class="production-elm">
-                <p>Buy 1 Farm</p>
+                <div>
+                    <p>Buy 1 Farm</p>
+                    <p id="costFarm">For 1100 Cookies</p>
+                </div>
                 <button>
                     <a id="buyFarm"><img class="farm" src="./img/farm.png"></a>
                 </button>
-                <p id="costFarm">For 100 Cookies</p>
-                <p id="amountFarm">Amount: 0</p>
+                <div>
+                    <p id="amountFarm">Amount: 0</p>
+                    <p id="perSecFarm">Per second: 0</p>
+                </div>
             </div>
             <div class="production-elm">
-                <p>Buy 1 Bakery</p>
+                <div>
+                    <p>Buy 1 Bakery</p>
+                    <p id="costBakery">For 12000 Cookies</p>
+                </div>
                 <button>
                     <a id="buyBakery"><img class="bakery" src="./img/bakery.png"></a>
                 </button>
-                <p id="costBakery">For 100 Cookies</p>
-                <p id="amountBakery">Amount: 0</p>
+                <div>
+                    <p id="amountBakery">Amount: 0</p>
+                    <p id="perSecBakery">Per second: 0</p>
+                </div>
             </div>
             <div class="production-elm">
-                <p>Buy 1 Mine</p>
+                <div>
+                    <p>Buy 1 Mine</p>
+                    <p id="costMine">For 130000 Cookies</p>
+                </div>
                 <button>
                     <a id="buyMine"><img class="mine" src="./img/mine.png"></a>
                 </button>
-                <p id="costMine">For 100 Cookies</p>
-                <p id="amountMine">Amount: 0</p>
-            </div>
-            <div>
-                <button><a id="saveScore">Save</a></button>
-                <button><a id="loadScore">Load</a></button>
+                <div>
+                    <p id="amountMine">Amount: 0</p>
+                    <p id="perSecMine">Per second: 0</p>
+                </div>
             </div>
         </div>
     </div>
