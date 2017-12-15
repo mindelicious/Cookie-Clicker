@@ -1,3 +1,3 @@
 # Cookie-Clicker
 
-Open index.html file and have fun!!
+Open index.html and have fun!!
