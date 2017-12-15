@@ -97,6 +97,7 @@ buyCursor.onclick = function() {
         update();
     }
 }
+
 //Buy Grandma
 var buyGrandmaElm = document.getElementById('buyGrandma');
 var grandma = 0;
@@ -118,6 +119,7 @@ buyFarmElm.onclick = function() {
         update();
     }
 }
+
 //Buy Bakery
 var buyBakeryElm = document.getElementById('buyBakery');
 var bakery = 0;
