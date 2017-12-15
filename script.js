@@ -50,7 +50,7 @@ loadScoreElm.onclick = function() {
 
 //Update
 function update() {
-    document.getElementById('cook-qt').innerHTML = cookieCount.toFixed(0);
+    document.getElementById('cook-qt').innerHTML = Math.floor(cookieCount);
     document.title = cookieCount.toFixed(0) + ' Cookies';
 
     document.getElementById('amountCursor').innerHTML = 'Amount: ' + autoClick;
