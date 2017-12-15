@@ -95,7 +95,6 @@ buyCursor.onclick = function() {
         cookieCount = cookieCount - ((autoClick+1) * cursorProd);
         autoClick = autoClick + 1;
         update()
-        updatePrice();
     }
 }
 //Buy Grandma
