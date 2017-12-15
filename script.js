@@ -16,7 +16,7 @@ var minePerSec = 260;
 // Add cookie
 cookieElm.onclick = function() {
     cookieCount = cookieCount + 1;
-    update()
+    update();
 }
 
 // Save/Load score
@@ -83,7 +83,7 @@ function timer() {
     cookieCount = cookieCount + farm * farmPerSec;
     cookieCount = cookieCount + bakery * bakeryPerSec;
     cookieCount = cookieCount + mine * minePerSec;
-    update()
+    update();
 }
 setInterval(timer, 1000)
 
@@ -94,7 +94,7 @@ buyCursor.onclick = function() {
     if(cookieCount >= ((autoClick+1) * cursorProd)) {
         cookieCount = cookieCount - ((autoClick+1) * cursorProd);
         autoClick = autoClick + 1;
-        update()
+        update();
     }
 }
 //Buy Grandma
